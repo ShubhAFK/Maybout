@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Maybout
 
-## Getting Started
+Maybout is a production-ready web platform where users can create SEO-optimized public profile pages that rank on Google when someone searches their name (e.g., "pawan bout" or "pawan maybout").
 
-First, run the development server:
+## Tech Stack
+- Next.js 14+ (App Router), TypeScript, Tailwind CSS
+- Supabase (Auth, Postgres, Storage, Row Level Security)
+- Vercel Deployment
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Local Setup
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clone the repository and install dependencies:
+   ```bash
+   git clone https://github.com/Kilo-Org/maybout.git
+   cd Maybout
+   npm install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Configure environment variables:
+   Copy `.env.example` to `.env.local` and fill in your Supabase credentials:
+   ```bash
+   cp .env.example .env.local
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Run Supabase SQL migrations:
+   Execute the SQL found in `supabase/schema.sql` in your Supabase SQL Editor.
 
-## Learn More
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-To learn more about Next.js, take a look at the following resources:
+## Supabase Setup
+- Enable Email/Password authentication and Google OAuth in your Supabase Dashboard.
+- Create a public Storage bucket named `profile-images`.
+- Apply the RLS policies in `supabase/schema.sql`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Vercel Deployment
+1. Push your code to GitHub.
+2. Import the project into Vercel.
+3. Add environment variables (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SITE_URL`, `ADMIN_EMAILS`).
+4. Deploy!
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Custom Domain & Google Search Console
+1. Buy a custom domain (e.g. `maybout.com`) and add it to Vercel.
+2. Verify your site in Google Search Console using HTML tag or DNS verification.
+3. Submit your sitemap (`https://maybout.com/sitemap.xml`) in Google Search Console.
