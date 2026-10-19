@@ -1,23 +1,39 @@
 # Maybout
 
-> **Get your public profile on the top of Google search in seconds.**
+A public profile platform engineered for personal search engine optimization (SEO) and online presence management.
 
-Maybout is a minimalist platform that lets anyone create an SEO-optimized public profile page at `/firstname-lastname`. When people search for your name on Google (e.g., `"pawan bout"` or `"pawan maybout"`), your Maybout profile is designed to be the top result.
+## Overview
 
----
-
-## How It Works (3 Easy Steps)
-
-1. **Sign Up:** Create a free account with your email and confirm your address.
-2. **Build Your Profile:** Add your photo, headline, bio, and up to 10 social or website links.
-3. **Show Up on Google:** Your profile is automatically generated at `maybout.com/your-name` with built-in search engine optimization. No code or complex setup required!
+Maybout allows users to create search-optimized public profiles accessible at custom URL paths (such as `/firstname-lastname`). The platform is built to maximize discoverability on major search engines when individuals are queried by name, providing a clean, accessible, and high-performance digital identity page.
 
 ---
 
-## Key Features
+## Key Capabilities
 
--  **Built for Google Search:** Dynamic title tags, rich snippets, and Schema.org metadata so search engines understand who you are.
--  **Automatic Image Processing:** Upload any photo—Maybout crops, compresses, and optimizes it automatically.
--  **SEO Score & Live Preview:** See real-time recommendations to maximize your profile’s visibility.
--  **Privacy & Safety Control:** Turn on the "Hide from Google" toggle anytime, or request permanent account/data removal.
--  **Mobile & Share Friendly:** Designed to look crisp and clean on any device or when shared on social apps.
+* **Personal Brand Optimization:** Generates dynamic, canonical public profile pages structured specifically for search engine indexing.
+* **Automated Asset Processing:** Handles uploaded media by automatically cropping, resizing, compressing, and stripping EXIF metadata to ensure privacy and optimal load performance.
+* **Live SEO Analysis:** Provides real-time SEO scoring (0–100) with tailored recommendations to improve profile visibility and search ranking potential.
+* **Granular Privacy Controls:** Includes a one-click indexing toggle (`noindex`) allowing users to instantly hide or expose their profile to search engine crawlers.
+* **Safety and Content Moderation:** Features built-in profile reporting, automated content and link sanitation, rate-limiting protections, and compliant account deletion workflows.
+* **Responsive and Accessible Interface:** Built using semantic HTML and accessible UI components with native dark and light mode support across mobile, tablet, and desktop viewports.
+
+---
+
+## How It Works
+
+1. **Account Registration:** Users register with an email address and complete basic age and identity verification.
+2. **Profile Configuration:** Users input their public information, including full name, location, headline, bio, professional or personal links, and a profile photo.
+3. **Indexing and Visibility:** Maybout automatically formats the metadata, generates Schema.org JSON-LD structured data, and makes the profile indexable by global search crawlers.
+
+---
+
+## Technical Architecture and Specifications
+
+* **Framework:** Next.js (App Router, Server-Side Rendering, Incremental Static Regeneration)
+* **Styling:** Tailwind CSS with dynamic theme switching and reduced-motion support
+* **Backend Services:** Supabase (Authentication, PostgreSQL Database, Object Storage, Row Level Security)
+* **Search Engine Optimization:**
+  * Dynamic `<title>` and meta description tags optimized for character limits
+  * Open Graph and Twitter Card metadata for social media preview cards
+  * Auto-generated `sitemap.xml` and `robots.txt` configurations
+  * Schema.org `ProfilePage` and `Person` structured data markup
